@@ -1,6 +1,9 @@
 <h1><%=@tweet.content%></h1>
 <br>
-<a href="/tweets/<%=@tweet.id%>/edit">Delete Tweet</a>
+<form class="" action="/tweets/<%=@tweet.id%>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" name="Delete Tweet" value="delete">
+</form> <!-- /spec/controllers/application_controller_spec.rb:382 -->
 <a href="/tweets/<%=@tweet.id%>/edit">Edit Tweet</a>
 
 <!-- changed href edit_tweet to edit because path is edit-->

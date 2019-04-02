@@ -2,7 +2,7 @@
 class TweetsController < ApplicationController #ApplicationController inheritance needed for logged_in?
     set :session_secret, "my_application_secret"
     set :views, Proc.new { File.join(root, "../views/") }
-    #always check params and shotgun when dealing with this
+    #always check params and shotgun and browser when dealing with this
     get '/tweets' do
         if logged_in?
          @tweets = Tweet.all

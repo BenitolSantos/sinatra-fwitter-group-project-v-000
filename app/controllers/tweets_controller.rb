@@ -75,6 +75,7 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
           #delete action logged in does not let a user delete a tweet they did not create
         @user.tweets.delete(@tweet)
         Tweet.all.delete(@tweet)
+      end
         redirect to("/tweets")
       else
         redirect to "/login"

@@ -72,7 +72,7 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
         @tweet = Tweet.find_by(id: params[:id])
         binding.pry
         current_user.tweets.delete(@tweet)
-        Tweets.all.delete(@tweet)
+        Tweet.all.delete(@tweet)
         redirect to("/tweets")
       else
         redirect to "/login"

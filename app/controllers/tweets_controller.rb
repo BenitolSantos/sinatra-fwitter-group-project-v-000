@@ -74,6 +74,7 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
       Tweets.all.delete(@tweet)
       redirect to("/tweets")
       else
+        redirect to "/login"
       end
     end
 

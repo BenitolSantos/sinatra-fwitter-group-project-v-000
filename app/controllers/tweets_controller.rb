@@ -71,7 +71,7 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
       if logged_in?
         @tweet = Tweet.find_by(id: params[:id])
         binding.pry
-        User.find_by(id: params[:user_id])
+        User.find_by(id: @tweet.user_id)
         current_user.tweets.delete(@tweet)
         Tweet.all.delete(@tweet)
         redirect to("/tweets")

@@ -73,9 +73,9 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
         @user = User.find_by(id: @tweet.user_id)
         if current_user == @user
           #delete action logged in does not let a user delete a tweet they did not create
-        @user.tweets.delete(@tweet)
-        Tweet.all.delete(@tweet)
-      end
+          @user.tweets.delete(@tweet)
+          Tweet.all.delete(@tweet)
+        end
         redirect to("/tweets")
       else
         redirect to "/login"

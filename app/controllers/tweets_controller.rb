@@ -71,7 +71,7 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
       if logged_in?
         @tweet = Tweet.find_by(id: params[:id])
         @user = User.find_by(id: @tweet.user_id)
-        if user
+        if @user
           #delete action logged in does not let a user delete a tweet they did not create
         @user.tweets.delete(@tweet)
         Tweet.all.delete(@tweet)

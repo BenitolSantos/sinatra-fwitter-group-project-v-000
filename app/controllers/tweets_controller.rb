@@ -70,7 +70,6 @@ class TweetsController < ApplicationController #ApplicationController inheritanc
     delete '/tweets/:id' do
       if logged_in?
         @tweet = Tweet.find_by(id: params[:id])
-        binding.pry
         @user = User.find_by(id: @tweet.user_id)
         @user.tweets.delete(@tweet)
         Tweet.all.delete(@tweet)
